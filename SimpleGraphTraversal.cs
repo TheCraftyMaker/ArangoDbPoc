@@ -121,7 +121,7 @@ namespace ArangoDbPoc
                 await Arango.Collection.TruncateAsync(DatabaseName, ChildrenCollectionName);
                 await Arango.Graph.DropAsync(DatabaseName, GraphName);
 
-                var data = new List<RelationShip>
+                var data = new List<CharacterRelationship>
                 {
                     new("Ned", "Stark", "Robb", "Stark"),
                     new("Ned", "Stark", "Sansa", "Stark"),
@@ -202,7 +202,5 @@ namespace ArangoDbPoc
                 Console.WriteLine("Error occured while querying graph. " + e);
             }
         }
-
-        internal record RelationShip(string ParentName, string ParentSurname, string ChildName, string ChildSurname);
     }
 }
